@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WHMCS_API
+namespace WHMCS_API.ValidateLogin
 {
     public class ValidateLogin
     {

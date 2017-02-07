@@ -59,7 +59,6 @@ namespace WHMCS_API
             [StringValue("stats")] Stats
         }
 
-<<<<<<< HEAD
         public enum GetOrdersParams
         {
             [StringValue("limitstart")] LimitStart,
@@ -76,8 +75,17 @@ namespace WHMCS_API
             [StringValue("transid")] TransactionID
         }
 
-=======
->>>>>>> origin/master
+        public enum GetClientsProductsParams
+        {
+            [StringValue("limitstart")] ResultsStartOffset,
+            [StringValue("limitnum")] ResultsLimit,
+            [StringValue("clientid")] ClientID,
+            [StringValue("serviceid")] ServiceID,
+            [StringValue("pid")] ProductID,
+            [StringValue("domain")] Domain,
+            [StringValue("username2")] Username
+        }
+
         /// <summary>
         /// Actions Supported by the WHMCS API that are implemented in this Wrapper
         /// </summary>
@@ -86,13 +94,10 @@ namespace WHMCS_API
             [StringValue("ValidateLogin")] ValidateLogin,
             [StringValue("DomainWhois")] DomainWhois,
             [StringValue("AddClient")] AddClient,
-<<<<<<< HEAD
             [StringValue("GetClientsDetails")] GetClientsDetails,
             [StringValue("GetOrders")] GetOrders,
-            [StringValue("GetTransactions")] GetTransactions
-=======
-            [StringValue("GetClientsDetails")] GetClientsDetails
->>>>>>> origin/master
+            [StringValue("GetTransactions")] GetTransactions,
+            [StringValue("GetClientsProducts")] GetClientsProducts
         }
     }
 

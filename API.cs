@@ -118,6 +118,7 @@ namespace WHMCS_API
             else
                 throw new Exception("An API Error occurred", new Exception(result["message"].ToString()));
         }
+<<<<<<< HEAD
 
         /// <summary>
         /// Get the orders (for all clients/specific client/specific order/specific status)
@@ -161,5 +162,7 @@ namespace WHMCS_API
 
             return JsonConvert.DeserializeObject<GetTransactions>(_call.MakeCall(data));
         }
+=======
+>>>>>>> origin/master
     }
 }

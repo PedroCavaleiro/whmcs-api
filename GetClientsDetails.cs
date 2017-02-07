@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace WHMCS_API.GetClientsDetails
+namespace WHMCS_API
 {
     public class Client
     {

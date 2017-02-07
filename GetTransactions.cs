@@ -5,75 +5,75 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WHMCS_API.GetTransactions
+namespace WHMCS_API
 {
     public class Transaction
     {
 
         [JsonProperty("id")]
-        public string ID { get; set; }
+        public string id { get; set; }
 
         [JsonProperty("userid")]
-        public string UserID { get; set; }
+        public string userid { get; set; }
 
         [JsonProperty("currency")]
-        public string Currency { get; set; }
+        public string currency { get; set; }
 
         [JsonProperty("gateway")]
-        public string PaymentGateway { get; set; }
+        public string gateway { get; set; }
 
         [JsonProperty("date")]
-        public string Date { get; set; }
+        public string date { get; set; }
 
         [JsonProperty("description")]
-        public string Description { get; set; }
+        public string description { get; set; }
 
         [JsonProperty("amountin")]
-        public string AmountIn { get; set; }
+        public string amountin { get; set; }
 
         [JsonProperty("fees")]
-        public string Fees { get; set; }
+        public string fees { get; set; }
 
         [JsonProperty("amountout")]
-        public string AmountOut { get; set; }
+        public string amountout { get; set; }
 
         [JsonProperty("rate")]
-        public string Rate { get; set; }
+        public string rate { get; set; }
 
         [JsonProperty("transid")]
-        public string TransactionID { get; set; }
+        public string transid { get; set; }
 
         [JsonProperty("invoiceid")]
-        public string InvoiceID { get; set; }
+        public string invoiceid { get; set; }
 
         [JsonProperty("refundid")]
-        public string RefundID { get; set; }
+        public string refundid { get; set; }
     }
 
     public class Transactions
     {
 
         [JsonProperty("transaction")]
-        public IList<Transaction> Transaction { get; set; }
+        public IList<Transaction> transaction { get; set; }
     }
 
     public class GetTransactions
     {
 
         [JsonProperty("result")]
-        public string Result { get; set; }
+        public string result { get; set; }
 
         [JsonProperty("totalresults")]
-        public int TotalResults { get; set; }
+        public int totalresults { get; set; }
 
         [JsonProperty("startnumber")]
-        public int StartNumber { get; set; }
+        public int startnumber { get; set; }
 
         [JsonProperty("numreturned")]
-        public int NumberReturned { get; set; }
+        public int numreturned { get; set; }
 
         [JsonProperty("transactions")]
-        public Transactions Transactions { get; set; }
+        public Transactions transactions { get; set; }
     }
 
 }

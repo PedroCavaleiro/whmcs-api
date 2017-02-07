@@ -5,160 +5,160 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace WHMCS_API.GetOrders
+namespace WHMCS_API
 {
     public class Lineitem
     {
 
         [JsonProperty("type")]
-        public string Type { get; set; }
+        public string type { get; set; }
 
         [JsonProperty("relid")]
         public string relid { get; set; }
 
         [JsonProperty("producttype")]
-        public string ProductType { get; set; }
+        public string producttype { get; set; }
 
         [JsonProperty("product")]
-        public string Product { get; set; }
+        public string product { get; set; }
 
         [JsonProperty("domain")]
-        public string Domain { get; set; }
+        public string domain { get; set; }
 
         [JsonProperty("billingcycle")]
-        public string BillingCycle { get; set; }
+        public string billingcycle { get; set; }
 
         [JsonProperty("amount")]
-        public string Amount { get; set; }
+        public string amount { get; set; }
 
         [JsonProperty("status")]
-        public string Status { get; set; }
+        public string status { get; set; }
 
         [JsonProperty("dnsmanagement")]
-        public string DNSManagment { get; set; }
+        public string dnsmanagement { get; set; }
 
         [JsonProperty("emailforwarding")]
-        public string EmailFowarding { get; set; }
+        public string emailforwarding { get; set; }
 
         [JsonProperty("idprotection")]
-        public string IDProtection { get; set; }
+        public string idprotection { get; set; }
     }
 
     public class Lineitems
     {
 
         [JsonProperty("lineitem")]
-        public IList<Lineitem> LineItem { get; set; }
+        public IList<Lineitem> lineitem { get; set; }
     }
 
     public class Order
     {
 
         [JsonProperty("id")]
-        public string ID { get; set; }
+        public string id { get; set; }
 
         [JsonProperty("ordernum")]
-        public string OrderNumber { get; set; }
+        public string ordernum { get; set; }
 
         [JsonProperty("userid")]
-        public string UserID { get; set; }
+        public string userid { get; set; }
 
         [JsonProperty("contactid")]
-        public string ContactID { get; set; }
+        public string contactid { get; set; }
 
         [JsonProperty("date")]
-        public string Date { get; set; }
+        public string date { get; set; }
 
         [JsonProperty("nameservers")]
-        public string NameServers { get; set; }
+        public string nameservers { get; set; }
 
         [JsonProperty("transfersecret")]
-        public string TransfererSecret { get; set; }
+        public string transfersecret { get; set; }
 
         [JsonProperty("renewals")]
-        public string RenewalsSecret { get; set; }
+        public string renewals { get; set; }
 
         [JsonProperty("promocode")]
-        public string PromoCode { get; set; }
+        public string promocode { get; set; }
 
         [JsonProperty("promotype")]
-        public string PromoType { get; set; }
+        public string promotype { get; set; }
 
         [JsonProperty("promovalue")]
-        public string PromoValue { get; set; }
+        public string promovalue { get; set; }
 
         [JsonProperty("orderdata")]
-        public string OrderData { get; set; }
+        public string orderdata { get; set; }
 
         [JsonProperty("amount")]
-        public string Amount { get; set; }
+        public string amount { get; set; }
 
         [JsonProperty("paymentmethod")]
-        public string PaymentMethod { get; set; }
+        public string paymentmethod { get; set; }
 
         [JsonProperty("invoiceid")]
-        public string InvoiceID { get; set; }
+        public string invoiceid { get; set; }
 
         [JsonProperty("status")]
-        public string Status { get; set; }
+        public string status { get; set; }
 
         [JsonProperty("ipaddress")]
-        public string IPAddress { get; set; }
+        public string ipaddress { get; set; }
 
         [JsonProperty("fraudmodule")]
-        public string FraudModule { get; set; }
+        public string fraudmodule { get; set; }
 
         [JsonProperty("fraudoutput")]
-        public string FraudOutput { get; set; }
+        public string fraudoutput { get; set; }
 
         [JsonProperty("notes")]
-        public string Notes { get; set; }
+        public string notes { get; set; }
 
         [JsonProperty("paymentmethodname")]
-        public string PaymentMethodName { get; set; }
+        public string paymentmethodname { get; set; }
 
         [JsonProperty("paymentstatus")]
-        public object PaymentStatus { get; set; }
+        public object paymentstatus { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string name { get; set; }
 
         [JsonProperty("currencyprefix")]
-        public string CurrencyPrefix { get; set; }
+        public string currencyprefix { get; set; }
 
         [JsonProperty("currencysuffix")]
-        public string CurrencySuffix { get; set; }
+        public string currencysuffix { get; set; }
 
         [JsonProperty("frauddata")]
-        public string FraudData { get; set; }
+        public string frauddata { get; set; }
 
         [JsonProperty("lineitems")]
-        public Lineitems LineItems { get; set; }
+        public Lineitems lineitems { get; set; }
     }
 
     public class Orders
     {
 
         [JsonProperty("order")]
-        public IList<Order> Order { get; set; }
+        public IList<Order> order { get; set; }
     }
 
     public class GetOrders
     {
 
         [JsonProperty("result")]
-        public string Result { get; set; }
+        public string result { get; set; }
 
         [JsonProperty("totalresults")]
-        public string TotalResults { get; set; }
+        public string totalresults { get; set; }
 
         [JsonProperty("startnumber")]
-        public int StartNumber { get; set; }
+        public int startnumber { get; set; }
 
         [JsonProperty("numreturned")]
-        public int NumberReturned { get; set; }
+        public int numreturned { get; set; }
 
         [JsonProperty("orders")]
-        public Orders Orders { get; set; }
+        public Orders orders { get; set; }
     }
 }

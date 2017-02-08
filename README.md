@@ -4,8 +4,8 @@ This is an library to comunicate with the WHMCS API<br/>
 Currently these functions are already implemented
 
 <ul>
-  <li>Add Client</li>
-  <li>Domain WhoIs</li>
+  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/AddClient%28%29">Add Client</a></li>
+  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/DomainWhoIs%28%29">Domain WhoIs</a></li>
   <li>Get Client Details</li>
   <li>Validate Login</li>
   <li>GetTransactions</li>

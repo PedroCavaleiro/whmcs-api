@@ -47,4 +47,5 @@ Read more at the project Wiki <a href="https://github.com/hitmanpt/whmcs-api/wik
 You can also create custom functions of already implemented functions.<br />
 Read more at the project Wiki <a href="https://github.com/hitmanpt/whmcs-api/wiki/%5BAdvanced-Usage%5D-Supported-Actions">[Advanced Usage] Supported Actions</a>
 
+
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A3JFH2WA6U9YU)

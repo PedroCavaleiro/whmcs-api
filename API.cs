@@ -52,7 +52,14 @@ namespace WHMCS_API
                 { EnumUtil.GetString(APIEnums.DomainWhoisParams.Domain), Domain },
             };
 
-            return JsonConvert.DeserializeObject<DomainWhoIs>(_call.MakeCall(data));
+            string req = _call.MakeCall(data);
+            JObject result = JObject.Parse(req);
+
+            if (result["result"].ToString() == "success")
+                return JsonConvert.DeserializeObject<DomainWhoIs>(req);
+            else
+                throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
+            
         }
 
         /// <summary>
@@ -162,7 +169,7 @@ namespace WHMCS_API
             return JsonConvert.DeserializeObject<GetTransactions.GetTransactions>(_call.MakeCall(data));
         }
 
-        public string GetClientsProducts(int LimitStart = 0, int LimitNum = 25, int ClientID = -1, int ServiceID = -1, int ProductID = -1, string Domain = "", string Username = "")
+        public GetClientsProducts.GetClientsProducts GetClientsProducts(int LimitStart = 0, int LimitNum = 25, int ClientID = -1, int ServiceID = -1, int ProductID = -1, string Domain = "", string Username = "")
         {
             NameValueCollection data = new NameValueCollection()
             {
@@ -182,8 +189,7 @@ namespace WHMCS_API
             if (Username != "")
                 data.Add(EnumUtil.GetString(APIEnums.GetClientsProductsParams.Username), Username);
 
-            return _call.MakeCall(data);
-            //return JsonConvert.DeserializeObject<DomainWhoIs>(_call.MakeCall(data));
+            return JsonConvert.DeserializeObject<GetClientsProducts.GetClientsProducts>(_call.MakeCall(data));
         }
     }
 }

@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\bin",
-    "\\obj"
+    "\\obj",
+    "\\Properties"
   ],
-  "SelectedNode": "\\WHMCS API.csproj",
+  "SelectedNode": "\\WHMCS API.sln",
   "PreviewInSolutionExplorer": false
 }

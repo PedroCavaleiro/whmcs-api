@@ -8,9 +8,6 @@ Currently these functions are already implemented
   <li>Domain WhoIs</li>
   <li>Get Client Details</li>
   <li>Validate Login</li>
-  <li>GetTransactions</li>
-  <li>GetOrders</li>
-  <li>GetClientsProducts</li>
 </ul>
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A3JFH2WA6U9YU)
@@ -90,7 +87,7 @@ namespace YOUR_APP
                 { EnumUtil.GetString(APIEnums.ValidateLoginParams.Password), Password }
             };
 
-            ValidateLogin response =  JsonConvert.DeserializeObject<ValidateLogin.ValidateLogin>(_call.MakeCall(data));
+            ValidateLogin response =  JsonConvert.DeserializeObject<ValidateLogin>(_call.MakeCall(data));
             Session["uid"] = response.UserID;
             Session["upw"] = response.PasswordHash;
         }

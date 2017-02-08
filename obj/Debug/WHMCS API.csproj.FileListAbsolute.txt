@@ -1,6 +1,0 @@
-C:\Users\pmcav\Source\Repos\PCDev\WHMCS API\bin\Debug\WHMCS API.dll
-C:\Users\pmcav\Source\Repos\PCDev\WHMCS API\bin\Debug\WHMCS API.pdb
-C:\Users\pmcav\Source\Repos\PCDev\WHMCS API\bin\Debug\Newtonsoft.Json.dll
-C:\Users\pmcav\Source\Repos\PCDev\WHMCS API\bin\Debug\Newtonsoft.Json.xml
-C:\Users\pmcav\Source\Repos\PCDev\WHMCS API\obj\Debug\WHMCS API.dll
-C:\Users\pmcav\Source\Repos\PCDev\WHMCS API\obj\Debug\WHMCS API.pdb

@@ -113,7 +113,7 @@ namespace WHMCS_API.GetClientsDetails
         public string Credit { get; set; }
 
         [JsonProperty("taxexempt")]
-        public bool TexExempt { get; set; }
+        public bool TaxExempt { get; set; }
 
         [JsonProperty("latefeeoveride")]
         public bool LateFeeOveride { get; set; }
@@ -189,7 +189,7 @@ namespace WHMCS_API.GetClientsDetails
         public string UnPaidInvoicesAmount { get; set; }
 
         [JsonProperty("numcancelledinvoices")]
-        public int numcancelledinvoices { get; set; }
+        public int NumCancelledInvoices { get; set; }
 
         [JsonProperty("cancelledinvoicesamount")]
         public string CancelledInvoicesAmount { get; set; }
@@ -216,7 +216,7 @@ namespace WHMCS_API.GetClientsDetails
         public int ProductsNumActiveReseller { get; set; }
 
         [JsonProperty("productsnumreseller")]
-        public int ProductNumReseller { get; set; }
+        public int ProductsNumReseller { get; set; }
 
         [JsonProperty("productsnumactiveservers")]
         public int ProductsNumActiveServers { get; set; }

@@ -11,15 +11,39 @@ namespace WHMCS_API.GetClientsProducts
     {
 
         [JsonProperty("customfield")]
-        public IList<object> CustomField { get; set; }
+        public IList<Customfield> CustomField { get; set; }
     }
+
+    public class Customfield
+	{
+        [JsonProperty("id")]
+		public string ID { get; set; }
+        [JsonProperty("name")]
+		public string Name { get; set; }
+        [JsonProperty("translated_name")]
+		public string TranslatedName { get; set; }
+        [JsonProperty("value")]
+		public string Value { get; set; }
+	}
 
     public class Configoptions
     {
 
         [JsonProperty("configoption")]
-        public IList<object> ConfigOption { get; set; }
+        public IList<Configoption> ConfigOption { get; set; }
     }
+
+    public class Configoption
+	{
+        [JsonProperty("id")]
+		public string ID { get; set; }
+        [JsonProperty("option")]
+		public string Option { get; set; }
+        [JsonProperty("type")]
+		public string Type { get; set; }
+        [JsonProperty("value")]
+		public object Value { get; set; }
+	}
 
     public class Product
     {
@@ -94,10 +118,10 @@ namespace WHMCS_API.GetClientsProducts
         public string Status { get; set; }
 
         [JsonProperty("username")]
-        public string username { get; set; }
+        public string Username { get; set; }
 
         [JsonProperty("password")]
-        public string Username { get; set; }
+        public string Password { get; set; }
 
         [JsonProperty("subscriptionid")]
         public string Subscription { get; set; }
@@ -162,13 +186,13 @@ namespace WHMCS_API.GetClientsProducts
         public string ClientID { get; set; }
 
         [JsonProperty("serviceid")]
-        public object ServiceID { get; set; }
+        public int ServiceID { get; set; }
 
         [JsonProperty("pid")]
-        public object ProductID { get; set; }
+        public int ProductID { get; set; }
 
         [JsonProperty("domain")]
-        public object Domain { get; set; }
+        public string Domain { get; set; }
 
         [JsonProperty("totalresults")]
         public string TotalResults { get; set; }

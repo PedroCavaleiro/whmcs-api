@@ -15,6 +15,11 @@ Currently these functions are already implemented
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A3JFH2WA6U9YU)
 
+How to install<br />
+[NuGet](https://www.nuget.org/packages/WHMCS_API/0.4.3) Packet Manager Console on VisualStudio `Install-Package WHMCS_API`
+<br />or<br />
+<a href="https://github.com/hitmanpt/whmcs-api/releases">Releases</a> project page (need to also download Newtonsoft.Json if not already included on your project)
+
 The implemented functions are designed to be very easy to use
 The following code demonstrates to to implement the GetClientDetails on an ASP.net MVC app<br />
 More information on the project Wiki <a href="https://github.com/hitmanpt/whmcs-api/wiki/Getting-Started">Getting Started</a>

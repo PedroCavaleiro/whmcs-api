@@ -9,7 +9,7 @@ Currently these functions are already implemented
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetClientsDetails%28%29">Get Client Details</a></li>
   <li>Validate Login</li>
   <li>GetTransactions</li>
-  <li>GetOrders</li>
+  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetOrders%28%29">GetOrders</a></li>
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetClientsProducts%28%29">GetClientsProducts</a></li>
 </ul>
 

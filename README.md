@@ -16,7 +16,8 @@ Currently these functions are already implemented
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A3JFH2WA6U9YU)
 
 The implemented functions are designed to be very easy to use
-The following code demonstrates to to implement the GetClientDetails on an ASP.net MVC app
+The following code demonstrates to to implement the GetClientDetails on an ASP.net MVC app<br />
+More information on the project Wiki <a href="https://github.com/hitmanpt/whmcs-api/wiki/Getting-Started">Getting Started</a>
 
 ```
 using WHMCS-API;
@@ -39,63 +40,11 @@ namespace YOUR_APP
 }
 ```
 
-You can still use this library to call non implemented functions by using the following code
+You can still use this library to call non implemented<br />
+Read more at the project Wiki <a href="https://github.com/hitmanpt/whmcs-api/wiki/%5BAdvanced-Usage%5D-Unsuported-Actions">[Advanced Usage] Unsuported Actions</a>
 
-```
-using WHMCS-API.Call;
-using System.Collections.Specialized;
-using Newtonsoft.Json; //Not necessary but recommended as the call returns a JSON String
-
-namespace YOUR_APP
-{
-    public class YOUR_CLASS
-    {
-        //The function can be private or public and does not need to return anything or can even return an string or any other type
-        public YourModel yourFunction()
-        {
-            Call _call = new Call(WHMCS_API_USERNAME, WHMCS_API_PASSWORD, WHMCS_API_ACCESSKEY, WHMCS_USER_FRONTEND_URL);
-            NameValueCollection data = new NameValueCollection()
-            {
-                { "action", "ModuleChangePackage " },
-                { "accountid", "1" }
-            };
-
-            return JsonConvert.DeserializeObject<YourModel>(_call.MakeCall(data));
-        }
-    }
-}
-```
 
 You can also create custom functions of already implemented functions.<br />
-In this example i'm gonna show how to use the login function
-
-```
-using WHMCS-API;
-using WHMCS-API.Call;
-using System.Collections.Specialized;
-using Newtonsoft.Json; //Not necessary but recommended as the call returns a JSON String
-
-namespace YOUR_APP
-{
-    public class YOUR_CLASS
-    {
-        //The function can be private or public and does not need to return anything or can even return an string or any other type
-        public void _Login()
-        {
-            Call _call = new Call(WHMCS_API_USERNAME, WHMCS_API_PASSWORD, WHMCS_API_ACCESSKEY, WHMCS_USER_FRONTEND_URL);
-            NameValueCollection data = new NameValueCollection()
-            {
-                { "action", EnumUtil.GetString(APIEnums.Actions.ValidateLogin) },
-                { EnumUtil.GetString(APIEnums.ValidateLoginParams.Email), Email },
-                { EnumUtil.GetString(APIEnums.ValidateLoginParams.Password), Password }
-            };
-
-            ValidateLogin response =  JsonConvert.DeserializeObject<ValidateLogin.ValidateLogin>(_call.MakeCall(data));
-            Session["uid"] = response.UserID;
-            Session["upw"] = response.PasswordHash;
-        }
-    }
-}
-```
+Read more at the project Wiki <a href="https://github.com/hitmanpt/whmcs-api/wiki/%5BAdvanced-Usage%5D-Supported-Actions">[Advanced Usage] Supported Actions</a>
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A3JFH2WA6U9YU)

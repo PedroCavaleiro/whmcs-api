@@ -16,13 +16,7 @@ namespace WHMCS_API
         private readonly string AccessKey;
         private readonly string Url;
 
-        /// <summary>
-        /// Prepare the call of the API
-        /// </summary>
-        /// <param name="Username">API Username</param>
-        /// <param name="Password">API Password</param>
-        /// <param name="AccessKey">API AccessKey (must be set in config.php)</param>
-        /// <param name="Url">WHMCS User Front End URL (ex: https://example.com/client)</param>
+        
         public Call(string Username, string Password, string AccessKey, string Url)
         {
             this.Username = Username;
@@ -69,12 +63,10 @@ namespace WHMCS_API
 
         private string CalculateMD5Hash(string input)
         {
-            // step 1, calculate MD5 hash from input
             MD5 md5 = MD5.Create();
             byte[] inputBytes = Encoding.ASCII.GetBytes(input);
             byte[] hash = md5.ComputeHash(inputBytes);
 
-            // step 2, convert byte array to hex string
             StringBuilder sb = new StringBuilder();
             foreach (byte t in hash)
             {

@@ -8,11 +8,11 @@ Currently these functions are already implemented
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/DomainWhoIs%28%29">Domain WhoIs</a></li>
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetClientsDetails%28%29">Get Client Details</a></li>
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/ValidateLogin%28%29">Validate Login</a></li>
-  <li><a href="">GetInvoice</a></li>
-  <li><a href="">GetInvoices</a></li>
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetTransactions%28%29">GetTransactions</a></li>
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetOrders%28%29">GetOrders</a></li>
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetClientsProducts%28%29">GetClientsProducts</a></li>
+  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetInvoices%28%29">GetInvoices</a></li>
+  <li><a href="">GetInvoice</a></li>
 </ul>
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A3JFH2WA6U9YU)

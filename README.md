@@ -7,8 +7,8 @@ Currently these functions are already implemented
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/AddClient%28%29">Add Client</a></li>
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/DomainWhoIs%28%29">Domain WhoIs</a></li>
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetClientsDetails%28%29">Get Client Details</a></li>
-  <li>Validate Login</li>
-  <li>GetTransactions</li>
+  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/ValidateLogin%28%29">Validate Login</a></li>
+  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetTransactions%28%29">GetTransactions</a></li>
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetOrders%28%29">GetOrders</a></li>
   <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetClientsProducts%28%29">GetClientsProducts</a></li>
 </ul>

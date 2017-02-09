@@ -86,6 +86,19 @@ namespace WHMCS_API
             [StringValue("username2")] Username
         }
 
+        public enum GetInvoicesParams
+        {
+            [StringValue("limitstart")] LimitStart,
+            [StringValue("limitnum")] LimitNumber,
+            [StringValue("userid")] UserID,
+            [StringValue("status")] Status
+        }
+
+        public enum GetInvoiceParams
+        {
+            [StringValue("invoiceid")] InvoiceID
+        }
+
         /// <summary>
         /// Actions Supported by the WHMCS API that are implemented in this Wrapper
         /// </summary>
@@ -97,12 +110,14 @@ namespace WHMCS_API
             [StringValue("GetClientsDetails")] GetClientsDetails,
             [StringValue("GetOrders")] GetOrders,
             [StringValue("GetTransactions")] GetTransactions,
-            [StringValue("GetClientsProducts")] GetClientsProducts
+            [StringValue("GetClientsProducts")] GetClientsProducts,
+            [StringValue("GetInvoices")] GetInvoices,
+            [StringValue("GetInvoice")] GetInvoice
         }
     }
 
     /// <summary>
-    /// Creastes an attribute called StringValue
+    /// Creates an attribute called StringValue
     /// </summary>
     public class StringValue : Attribute
     {
@@ -125,11 +140,6 @@ namespace WHMCS_API
     /// </summary>
     public static class EnumUtil
     {
-        /// <summary>
-        /// Gets the string out of the enum
-        /// </summary>
-        /// <param name="value">The enum from witch will be extracted the string</param>
-        /// <returns>The string associated with the value enum</returns>
         public static string GetString(Enum value)
         {
             string output = null;

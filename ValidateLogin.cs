@@ -16,6 +16,9 @@ namespace WHMCS_API.ValidateLogin
         [JsonProperty("userid")]
         public int UserID { get; set; }
 
+        [JsonProperty("contactid")]
+        public int ContactID { get; set; }
+
         [JsonProperty("passwordhash")]
         public string PasswordHash { get; set; }
     }

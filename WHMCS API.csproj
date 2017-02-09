@@ -50,6 +50,8 @@
     <Compile Include="DomainWhoIs.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="GetClientsProducts.cs" />
+    <Compile Include="GetInvoice.cs" />
+    <Compile Include="GetInvoices.cs" />
     <Compile Include="GetOrders.cs" />
     <Compile Include="GetTransactions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

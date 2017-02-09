@@ -11,21 +11,21 @@ namespace WHMCS_API
 {
     public class API
     {
+
+        JsonSerializerSettings settings;
+
         private readonly Call _call;
         public API(string Username, string Password, string AccessKey, string Url)
         {
             _call = new Call(Username, Password, AccessKey, Url);
+            settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+                MissingMemberHandling = MissingMemberHandling.Ignore
+            };
         }
 
-        /// <summary>
-        /// Validates a client login
-        /// </summary>
-        /// <see cref="https://developers.whmcs.com/api-reference/validatelogin/"/>
-        /// <param name="Email">Client Email</param>
-        /// <param name="Password">Client Password (cleartext)</param>
-        /// <returns>Returns the result of the call
-        /// The userid string for the session Session["uid"]
-        /// The passwordhash for the session Session["upw"]</returns>
+        
         public ValidateLogin.ValidateLogin ValidateLogin(string Email, string Password)
         {
             NameValueCollection data = new NameValueCollection()
@@ -35,15 +35,17 @@ namespace WHMCS_API
                 { EnumUtil.GetString(APIEnums.ValidateLoginParams.Password), Password }
             };
 
+            string req = _call.MakeCall(data);
+            JObject result = JObject.Parse(req);
+
+            if (result["result"].ToString() == "success")
+                return JsonConvert.DeserializeObject<ValidateLogin.ValidateLogin>(req, settings);
+            else
+                throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
+
             return JsonConvert.DeserializeObject<ValidateLogin.ValidateLogin>(_call.MakeCall(data));
         }
-
-        /// <summary>
-        /// Checks if a domain is available to regsiter, if not will return the whois
-        /// </summary>
-        /// <see cref="https://developers.whmcs.com/api-reference/domainwhois/"/>
-        /// <param name="Domain">The domain to be checked</param>
-        /// <returns>Result of the call, if the domain is registered or not, and if registered the WhoIs</returns>
+    
         public DomainWhoIs DomainWhoIs(string Domain)
         {
             NameValueCollection data = new NameValueCollection()
@@ -56,24 +58,12 @@ namespace WHMCS_API
             JObject result = JObject.Parse(req);
 
             if (result["result"].ToString() == "success")
-                return JsonConvert.DeserializeObject<DomainWhoIs>(req);
+                return JsonConvert.DeserializeObject<DomainWhoIs>(req, settings);
             else
                 throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
             
         }
-
-        /// <summary>
-        /// Registers a new client
-        /// </summary>
-        /// <remarks>
-        /// When registerying an exception may occurr. If you get "An API Error Ocurred" read the inner exception
-        /// </remarks>
-        /// <example>
-        /// try { your code } catch (Exception ex) { Console.WriteLine(ex.InnerException.Message); }
-        /// </example>
-        /// <see cref="https://developers.whmcs.com/api-reference/addclient/"/>
-        /// <param name="ClientInfo">The Model of the AddClient action</param>
-        /// <returns>If success returns the ID of the newly created user otherwise will throw an exception</returns>
+    
         public int AddClient(AddClient ClientInfo)
         {
             NameValueCollection data = new NameValueCollection()
@@ -95,14 +85,7 @@ namespace WHMCS_API
                 throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
 
         }
-
-        /// <summary>
-        /// Gets the client details
-        /// </summary>
-        /// <param name="ClientID">The client ID to search</param>
-        /// <param name="ClientEmail">The client Email to search</param>
-        /// <param name="Stats">Get extended stats for the client</param>
-        /// <returns>All details of the client</returns>
+       
         public GetClientsDetails.GetClientsDetails GetClientsDetails(int ClientID = -1, string ClientEmail = "", bool Stats = false)
         {
             if (ClientID == -1 && ClientEmail == "")
@@ -121,20 +104,11 @@ namespace WHMCS_API
             string req = _call.MakeCall(data);
             JObject result = JObject.Parse(req);
             if (result["result"].ToString() == "success")
-                return JsonConvert.DeserializeObject<GetClientsDetails.GetClientsDetails>(req);
+                return JsonConvert.DeserializeObject<GetClientsDetails.GetClientsDetails>(req, settings);
             else
                 throw new Exception("An API Error occurred", new Exception(result["message"].ToString()));
         }
-
-        /// <summary>
-        /// Get the orders (for all clients/specific client/specific order/specific status)
-        /// </summary>
-        /// <param name="LimitStart">The offset for the returned order data (default: 0)</param>
-        /// <param name="LimitNumber">The number of records to return (default: 25)</param>
-        /// <param name="OrderID">Find orders for a specific id</param>
-        /// <param name="UserID">Find orders for a specific client id</param>
-        /// <param name="Status">Find orders for a specific status</param>
-        /// <returns>In a modelm, total results, start number, the number of results returned</returns>
+     
         public GetOrders.GetOrders GetOrders(int LimitStart = 0, int LimitNumber = 25, int OrderID = -1, int UserID = -1, string Status = "")
         {
             NameValueCollection data = new NameValueCollection()
@@ -150,7 +124,7 @@ namespace WHMCS_API
             if (Status != "")
                 data.Add(EnumUtil.GetString(APIEnums.GetOrdersParams.Status), Status);
 
-            return JsonConvert.DeserializeObject<GetOrders.GetOrders>(_call.MakeCall(data));
+            return JsonConvert.DeserializeObject<GetOrders.GetOrders>(_call.MakeCall(data), settings);
         }
 
         public GetTransactions.GetTransactions GetTransactions(int InvoiceID = -1, int ClientID = -1, string TransactionID = "")
@@ -166,7 +140,7 @@ namespace WHMCS_API
             if (TransactionID != "")
                 data.Add(EnumUtil.GetString(APIEnums.GetTransactionsParams.TransactionID), TransactionID);
 
-            return JsonConvert.DeserializeObject<GetTransactions.GetTransactions>(_call.MakeCall(data));
+            return JsonConvert.DeserializeObject<GetTransactions.GetTransactions>(_call.MakeCall(data), settings);
         }
 
         public GetClientsProducts.GetClientsProducts GetClientsProducts(int LimitStart = 0, int LimitNum = 25, int ClientID = -1, int ServiceID = -1, int ProductID = -1, string Domain = "", string Username = "")
@@ -189,7 +163,42 @@ namespace WHMCS_API
             if (Username != "")
                 data.Add(EnumUtil.GetString(APIEnums.GetClientsProductsParams.Username), Username);
 
-            return JsonConvert.DeserializeObject<GetClientsProducts.GetClientsProducts>(_call.MakeCall(data));
+            return JsonConvert.DeserializeObject<GetClientsProducts.GetClientsProducts>(_call.MakeCall(data), settings);
+        }
+
+        public GetInvoices.GetInvoices GetInvoices(int LimitStart = 0, int LimitNumber = 25, int UserID = -1, string Status = "")
+        {
+            NameValueCollection data = new NameValueCollection()
+            {
+                { "action", APIEnums.Actions.GetInvoices.ToString() },
+                { EnumUtil.GetString(APIEnums.GetInvoicesParams.LimitStart), LimitStart.ToString() },
+                { EnumUtil.GetString(APIEnums.GetInvoicesParams.LimitNumber), LimitNumber.ToString() }
+            };
+            if (UserID != -1)
+                data.Add(EnumUtil.GetString(APIEnums.GetInvoicesParams.UserID), UserID.ToString());
+            if (Status != "")
+                data.Add(EnumUtil.GetString(APIEnums.GetInvoicesParams.Status), Status);
+
+            return JsonConvert.DeserializeObject<GetInvoices.GetInvoices>(_call.MakeCall(data), settings);
+        }
+
+        public GetInvoice.GetInvoice GetInvoice(int InvoiceID)
+        {
+            NameValueCollection data = new NameValueCollection()
+            {
+                { "action", EnumUtil.GetString(APIEnums.Actions.GetInvoice) },
+                { EnumUtil.GetString(APIEnums.GetInvoiceParams.InvoiceID), InvoiceID.ToString() }
+            };
+
+            string req = _call.MakeCall(data);
+
+            JObject result = JObject.Parse(req);
+
+            if (result["result"].ToString() == "success")
+                return JsonConvert.DeserializeObject<GetInvoice.GetInvoice>(req, settings);
+            else
+                throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
+
         }
     }
 }

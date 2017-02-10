@@ -200,5 +200,24 @@ namespace WHMCS_API
                 throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
 
         }
+
+        public GetClientsDomains.GetClientsDomains GetClientsDomains(int LimitStart = 0, int LimitNumber = 25, int ClientID = -1, int DomainID = -1, string Domain = "")
+        {
+            NameValueCollection data = new NameValueCollection()
+            {
+                { "action", EnumUtil.GetString(APIEnums.Actions.GetClientsDomains) },
+                { EnumUtil.GetString(APIEnums.GetClientsDomainsParams.LimitStart), LimitStart.ToString() },
+                { EnumUtil.GetString(APIEnums.GetClientsDomainsParams.LimitNumber), LimitNumber.ToString() }
+            };
+
+            if (ClientID != -1)
+                data.Add(EnumUtil.GetString(APIEnums.GetClientsDomainsParams.ClientID), ClientID.ToString());
+            if (DomainID != -1)
+                data.Add(EnumUtil.GetString(APIEnums.GetClientsDomainsParams.DomainID), DomainID.ToString());
+            if (Domain != "")
+                data.Add(EnumUtil.GetString(APIEnums.GetClientsDomainsParams.Domain), Domain);
+
+            return JsonConvert.DeserializeObject<GetClientsDomains.GetClientsDomains>(_call.MakeCall(data), settings);
+        }
     }
 }

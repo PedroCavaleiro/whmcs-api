@@ -55,6 +55,7 @@
     <Compile Include="GetOrders.cs" />
     <Compile Include="GetTransactions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GetClientsDomains.cs" />
     <Compile Include="ValidateLogin.cs" />
   </ItemGroup>
   <ItemGroup>

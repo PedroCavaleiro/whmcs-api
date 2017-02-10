@@ -99,6 +99,15 @@ namespace WHMCS_API
             [StringValue("invoiceid")] InvoiceID
         }
 
+        public enum GetClientsDomainsParams
+        {
+            [StringValue("limitstart")] LimitStart,
+            [StringValue("limitnum")] LimitNumber,
+            [StringValue("clientid")] ClientID,
+            [StringValue("domainid")] DomainID,
+            [StringValue("domain")] Domain
+        }
+
         /// <summary>
         /// Actions Supported by the WHMCS API that are implemented in this Wrapper
         /// </summary>
@@ -112,7 +121,8 @@ namespace WHMCS_API
             [StringValue("GetTransactions")] GetTransactions,
             [StringValue("GetClientsProducts")] GetClientsProducts,
             [StringValue("GetInvoices")] GetInvoices,
-            [StringValue("GetInvoice")] GetInvoice
+            [StringValue("GetInvoice")] GetInvoice,
+            [StringValue("GetClientsDomains")] GetClientsDomains
         }
     }
 

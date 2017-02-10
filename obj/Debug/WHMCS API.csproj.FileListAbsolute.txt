@@ -1,0 +1,5 @@
+C:\Users\pmcav\Source\Repos\whmcs-api\bin\Debug\WHMCS API.dll
+C:\Users\pmcav\Source\Repos\whmcs-api\bin\Debug\WHMCS API.pdb
+C:\Users\pmcav\Source\Repos\whmcs-api\obj\Debug\WHMCS API.csprojResolveAssemblyReference.cache
+C:\Users\pmcav\Source\Repos\whmcs-api\obj\Debug\WHMCS API.dll
+C:\Users\pmcav\Source\Repos\whmcs-api\obj\Debug\WHMCS API.pdb

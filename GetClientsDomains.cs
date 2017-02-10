@@ -94,7 +94,7 @@ namespace WHMCS_API.GetClientsDomains
         public string ClientID { get; set; }
 
         [JsonProperty("domainid")]
-        public object DomainID { get; set; }
+        public string DomainID { get; set; }
 
         [JsonProperty("totalresults")]
         public string TotalResults { get; set; }

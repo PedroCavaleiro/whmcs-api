@@ -3,17 +3,16 @@
 This is an library to comunicate with the WHMCS API<br/>
 Currently these functions are already implemented
 
-<ul>
-  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/AddClient%28%29">Add Client</a></li>
-  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/DomainWhoIs%28%29">Domain WhoIs</a></li>
-  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetClientsDetails%28%29">Get Client Details</a></li>
-  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/ValidateLogin%28%29">Validate Login</a></li>
-  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetTransactions%28%29">GetTransactions</a></li>
-  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetOrders%28%29">GetOrders</a></li>
-  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetClientsProducts%28%29">GetClientsProducts</a></li>
-  <li><a href="https://github.com/hitmanpt/whmcs-api/wiki/GetInvoices%28%29">GetInvoices</a></li>
-  <li><a href="">GetInvoice</a></li>
-</ul>
+* [Add Client](https://github.com/hitmanpt/whmcs-api/wiki/AddClient%28%29)
+* [Domain WhoIs](https://github.com/hitmanpt/whmcs-api/wiki/DomainWhoIs%28%29)
+* [Get Clients Details](https://github.com/hitmanpt/whmcs-api/wiki/GetClientsDetails%28%29)
+* [Get Clients Domains](https://github.com/hitmanpt/whmcs-api/wiki/GetClientsDomains%28%29)
+* [Get Clients Products](https://github.com/hitmanpt/whmcs-api/wiki/GetClientsProducts%28%29)
+* [Get Invoice](https://github.com/hitmanpt/whmcs-api/wiki/GetInvoice%28%29)
+* [Get Invoices](https://github.com/hitmanpt/whmcs-api/wiki/GetInvoices%28%29)
+* [Get Orders](https://github.com/hitmanpt/whmcs-api/wiki/GetOrders%28%29)
+* [Get Transactions](https://github.com/hitmanpt/whmcs-api/wiki/GetTransactions%28%29)
+* [Validate Login](https://github.com/hitmanpt/whmcs-api/wiki/ValidateLogin%28%29)
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A3JFH2WA6U9YU)
 

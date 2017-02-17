@@ -12,6 +12,8 @@ Currently these functions are already implemented
 * [Get Invoices](https://github.com/hitmanpt/whmcs-api/wiki/GetInvoices%28%29)
 * [Get Orders](https://github.com/hitmanpt/whmcs-api/wiki/GetOrders%28%29)
 * [Get Transactions](https://github.com/hitmanpt/whmcs-api/wiki/GetTransactions%28%29)
+* [Module Change Password](https://github.com/hitmanpt/whmcs-api/wiki/ModuleChangePassword%28%29)
+* [Module Custom Command](https://github.com/hitmanpt/whmcs-api/wiki/ModuleCustomCommand%28%29)
 * [Validate Login](https://github.com/hitmanpt/whmcs-api/wiki/ValidateLogin%28%29)
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A3JFH2WA6U9YU)

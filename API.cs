@@ -219,5 +219,42 @@ namespace WHMCS_API
 
             return JsonConvert.DeserializeObject<GetClientsDomains.GetClientsDomains>(_call.MakeCall(data), settings);
         }
+
+        public bool ModuleChangePassword(int ServiceID, string NewPassword, bool getException = true)
+        {
+            NameValueCollection data = new NameValueCollection()
+            {
+                { "action", EnumUtil.GetString(APIEnums.Actions.ModuleChangePassword) },
+                { EnumUtil.GetString(APIEnums.ModuleChangePasswordParams.ServiceID), ServiceID.ToString() },
+                { EnumUtil.GetString(APIEnums.ModuleChangePasswordParams.NewPassword), NewPassword }
+            };
+
+            JObject result = JObject.Parse(_call.MakeCall(data));
+
+            if (result["result"].ToString() == "success")
+                return true;
+            else if(result["result"].ToString() != "success" && getException)
+                throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
+            return false;
+        }
+
+        public bool ModuleCustomCommand(int ServiceID, string Command, bool getException = true)
+        {
+            NameValueCollection data = new NameValueCollection()
+            {
+                { "action", EnumUtil.GetString(APIEnums.Actions.ModuleCustomCommand) },
+                { EnumUtil.GetString(APIEnums.ModuleCustomCommandParams.ServiceID), ServiceID.ToString() },
+                { EnumUtil.GetString(APIEnums.ModuleCustomCommandParams.Command), Command }
+            };
+
+            JObject result = JObject.Parse(_call.MakeCall(data));
+
+            if (result["result"].ToString() == "success")
+                return true;
+            else if (result["result"].ToString() != "success" && getException)
+                throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
+            return false;
+
+        }
     }
 }

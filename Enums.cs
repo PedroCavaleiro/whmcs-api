@@ -94,6 +94,18 @@ namespace WHMCS_API
             [StringValue("status")] Status
         }
 
+        public enum ModuleChangePasswordParams
+        {
+            [StringValue("accountid")] ServiceID,
+            [StringValue("servicepassword")] NewPassword
+        }
+
+        public enum ModuleCustomCommandParams
+        {
+            [StringValue("accountid")] ServiceID,
+            [StringValue("func_name")] Command
+        }
+
         public enum GetInvoiceParams
         {
             [StringValue("invoiceid")] InvoiceID
@@ -122,7 +134,9 @@ namespace WHMCS_API
             [StringValue("GetClientsProducts")] GetClientsProducts,
             [StringValue("GetInvoices")] GetInvoices,
             [StringValue("GetInvoice")] GetInvoice,
-            [StringValue("GetClientsDomains")] GetClientsDomains
+            [StringValue("GetClientsDomains")] GetClientsDomains,
+            [StringValue("ModuleChangePw")] ModuleChangePassword,
+            [StringValue("ModuleCustom")] ModuleCustomCommand
         }
     }
 

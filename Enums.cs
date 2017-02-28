@@ -120,6 +120,82 @@ namespace WHMCS_API
             [StringValue("domain")] Domain
         }
 
+		public enum UpdateClientProductParams
+		{
+			[StringValue("serviceid")] ServiceID,
+			[StringValue("pid")] PackageID,
+			[StringValue("serverid")] ServerID,
+			[StringValue("nextduedate")] NextDueDate,
+			[StringValue("terminationDate")] TerminationDate,
+			[StringValue("completedDate")] CompletedDate,
+			[StringValue("domain")] Domain,
+			[StringValue("firstpaymentamount")] FirstPaymentAmount,
+			[StringValue("recurringamount")] RecurringAmount,
+			[StringValue("paymentmethod")] PaymentMethod,
+			[StringValue("subscriptionid")] SubscriptionID,
+			[StringValue("status")] Status,
+			[StringValue("notes")] Notes,
+			[StringValue("serviceusername")] ServiceUsername,
+			[StringValue("servicepassword")] ServicePassword,
+			[StringValue("overideautosuspend")] OverideAutoSuspend,
+			[StringValue("overidesuspenduntil")] OverideSuspendUntil,
+			[StringValue("ns1")] NameServer1,
+			[StringValue("ns2")] NameServer2,
+			[StringValue("dedicatedip")] DedicatedIP,
+			[StringValue("assignedips")] AssignedIPs,
+			[StringValue("diskusage")] DiskUsage,
+			[StringValue("disklimit")] DiskLimit,
+			[StringValue("bwusage")] BandwidthUsage,
+			[StringValue("bwlimit")] BandwidthLimit,
+			[StringValue("suspendreason")] SuspendReason,
+			[StringValue("promoid")] PromoID,
+			[StringValue("unset")] Unset,
+			[StringValue("autorecalc")] AutoRecalculate,
+			[StringValue("customfields")] CustomFields,
+			[StringValue("configoptions")] ConfigurationOptions
+		}
+
+		public static class UpdateClientProductSubEnums
+		{
+			public enum Status
+			{
+				Null,
+				[StringValue("Terminated")] Terminated,
+				[StringValue("Active")] Active,
+				[StringValue("Pending")] Pending,
+				[StringValue("Suspended")] Suspended,
+				[StringValue("Canceled")] Canceled,
+				[StringValue("Fraud")] Fraud
+			}
+
+			public enum Unset
+			{
+				[StringValue("ns1")] NameServer1,
+				[StringValue("ns2")] NameServer2,
+				[StringValue("serviceusername")] ServiceUsername,
+				[StringValue("servicepassword")] ServicePassword,
+				[StringValue("subscriptionid")] SubscriptionID,
+				[StringValue("dedicatedip")] DedicatedIP,
+				[StringValue("assignedips")] AssignedIPs,
+				[StringValue("notes")] Notes,
+				[StringValue("suspendreason")] SuspendReason
+			}
+
+			public enum OverideAutoSuspend
+			{
+				Null,
+				[StringValue("on")] True,
+				[StringValue("off")] False
+			}
+
+			public enum AutoRecalculate
+			{
+				Null,
+				[StringValue("true")] True,
+				[StringValue("false")] False
+			}
+		}
+
         /// <summary>
         /// Actions Supported by the WHMCS API that are implemented in this Wrapper
         /// </summary>
@@ -136,7 +212,8 @@ namespace WHMCS_API
             [StringValue("GetInvoice")] GetInvoice,
             [StringValue("GetClientsDomains")] GetClientsDomains,
             [StringValue("ModuleChangePw")] ModuleChangePassword,
-            [StringValue("ModuleCustom")] ModuleCustomCommand
+            [StringValue("ModuleCustom")] ModuleCustomCommand,
+			[StringValue("UpdateClientProduct")] UpdateClientProduct
         }
     }
 

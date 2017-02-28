@@ -3,3 +3,5 @@ C:\Users\pmcav\Source\Repos\whmcs-api\bin\Release\WHMCS API.pdb
 C:\Users\pmcav\Source\Repos\whmcs-api\obj\Release\WHMCS API.csprojResolveAssemblyReference.cache
 C:\Users\pmcav\Source\Repos\whmcs-api\obj\Release\WHMCS API.dll
 C:\Users\pmcav\Source\Repos\whmcs-api\obj\Release\WHMCS API.pdb
+C:\Users\pmcav\Source\Repos\whmcs-api\bin\Release\Newtonsoft.Json.dll
+C:\Users\pmcav\Source\Repos\whmcs-api\bin\Release\Newtonsoft.Json.xml

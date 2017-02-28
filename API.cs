@@ -42,8 +42,6 @@ namespace WHMCS_API
                 return JsonConvert.DeserializeObject<ValidateLogin.ValidateLogin>(req, settings);
             else
                 throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
-
-            return JsonConvert.DeserializeObject<ValidateLogin.ValidateLogin>(_call.MakeCall(data));
         }
     
         public DomainWhoIs DomainWhoIs(string Domain)
@@ -256,5 +254,17 @@ namespace WHMCS_API
             return false;
 
         }
+
+		public bool UpdateClientProduct(UpdateClientProduct.UpdateClientProduct ClientProductUpdateInfo)
+		{
+
+			JObject result = JObject.Parse(_call.MakeCall(ClientProductUpdateInfo.nvm));
+
+			if (result["result"].ToString() == "success")
+				return true;
+			else
+				throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
+
+		}
     }
 }

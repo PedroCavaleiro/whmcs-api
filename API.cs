@@ -255,13 +255,13 @@ namespace WHMCS_API
 
         }
 
-		public int UpdateClientProduct(UpdateClientProduct.UpdateClientProduct ClientProductUpdateInfo)
+		public bool UpdateClientProduct(UpdateClientProduct.UpdateClientProduct ClientProductUpdateInfo)
 		{
 
 			JObject result = JObject.Parse(_call.MakeCall(ClientProductUpdateInfo.nvm));
 
 			if (result["result"].ToString() == "success")
-				return Convert.ToInt32(result["clientid"]);
+				return true;
 			else
 				throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
 

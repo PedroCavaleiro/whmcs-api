@@ -20,6 +20,18 @@ namespace WHMCS_API
             [StringValue("domain")] Domain
         }
         
+        public enum AcceptOrderParams
+        {
+            [StringValue("orderid")] OrderId,
+            [StringValue("serverid")] ServerId,
+            [StringValue("serviceusername")] ServiceUsername,
+            [StringValue("servicepassword")] ServicePassword,
+            [StringValue("registrar")] Registrar,
+            [StringValue("sendregistrar")] SendRegistrar,
+            [StringValue("autosetup")] AutoSetup,
+            [StringValue("sendemail")] SendEmail
+        }
+
         public enum AddClientParams
         {
             [StringValue("firstname")] Firstname,
@@ -211,7 +223,7 @@ namespace WHMCS_API
         {
             [StringValue("ValidateLogin")] ValidateLogin,
             [StringValue("DomainWhois")] DomainWhois,
-            [StringValue("AcceptClient")] AcceptClient,
+            [StringValue("AcceptOrder")] AcceptOrder,
             [StringValue("AddClient")] AddClient,
             [StringValue("GetClients")] GetClients,
             [StringValue("GetClientsDetails")] GetClientsDetails,

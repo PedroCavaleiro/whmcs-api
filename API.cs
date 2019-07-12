@@ -61,6 +61,51 @@ namespace WHMCS_API
                 throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
             
         }
+
+        // Actions
+
+        /// <summary>
+        /// Accepts a pending order.
+        /// </summary>
+        /// <param name="OrderId">The order id to be accepted</param>
+        /// <param name="ServerId">The specific server to assign to products within the order</param>
+        /// <param name="ServiceUsername">The specific username to assign to products within the order</param>
+        /// <param name="ServicePassword">The specific password to assign to products within the order</param>
+        /// <param name="Registrar">The specific registrar to assign to domains within the order</param>
+        /// <param name="SendRegistrar">Send the request to the registrar to register the domain. Default: true</param>
+        /// <param name="AutoSetup">Send the request to the product module to activate the service. This can override the product configuration. Default: true</param>
+        /// <param name="SendEmail">Send any automatic emails. This can be Product Welcome, Domain Renewal, Domain Transfer etc. Default: true</param>
+        /// <returns>The result of the operation: success or error</returns>
+        public string AcceptOrder(int OrderId, int ServerId = -1, string ServiceUsername = "", string ServicePassword = "", string Registrar = "", bool SendRegistrar = true, bool AutoSetup = true, bool SendEmail = true)
+        {
+            NameValueCollection data = new NameValueCollection()
+            {
+                { "action", APIEnums.Actions.AcceptOrder.ToString() }
+            };
+
+            data.Add(EnumUtil.GetString(APIEnums.AcceptOrderParams.OrderId), OrderId.ToString());
+
+            if (ServerId != -1)
+                data.Add(EnumUtil.GetString(APIEnums.AcceptOrderParams.ServerId), ServerId.ToString());
+            if (ServiceUsername != "")
+                data.Add(EnumUtil.GetString(APIEnums.AcceptOrderParams.ServiceUsername), ServiceUsername.ToString());
+            if (ServicePassword != "")
+                data.Add(EnumUtil.GetString(APIEnums.AcceptOrderParams.ServicePassword), ServicePassword.ToString());
+            if (Registrar != "")
+                data.Add(EnumUtil.GetString(APIEnums.AcceptOrderParams.Registrar), Registrar.ToString());
+
+            data.Add(EnumUtil.GetString(APIEnums.AcceptOrderParams.SendRegistrar), SendRegistrar.ToString());
+            data.Add(EnumUtil.GetString(APIEnums.AcceptOrderParams.AutoSetup), AutoSetup.ToString());
+            data.Add(EnumUtil.GetString(APIEnums.AcceptOrderParams.SendEmail), SendEmail.ToString());
+
+            string req = _call.MakeCall(data);
+            JObject result = JObject.Parse(req);
+
+            if (result["result"].ToString() == "success")
+                return result.ToString();
+            else
+                throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
+        }
     
         public int AddClient(AddClient ClientInfo)
         {

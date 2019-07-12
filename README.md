@@ -4,7 +4,7 @@ This is an library to comunicate with the WHMCS API<br/>
 
 ### Currently these functions are already implemented
 
-* [Accept Order](https://github.com/byBlurr/whmcs-api/wiki/AcceptOrder()) - [API Reference] (https://developers.whmcs.com/api-reference/acceptorder/)
+* [Accept Order](https://github.com/byBlurr/whmcs-api/wiki/AcceptOrder())
 * [AddClient()](https://github.com/byBlurr/whmcs-api/wiki/AddClient())
 * [DomainWhoIs()](https://github.com/byBlurr/whmcs-api/wiki/DomainWhoIs())
 * [GetClients()](https://github.com/byBlurr/whmcs-api/wiki/GetClients())

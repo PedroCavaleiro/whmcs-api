@@ -52,6 +52,14 @@ namespace WHMCS_API
             [StringValue("skipvalidation")] SkipValidation
         }
 
+        public enum GetClientsParams
+        {
+            [StringValue("limitstart")] LimitStart,
+            [StringValue("limitnum")] LimitNum,
+            [StringValue("sorting")] Sorting,
+            [StringValue("search")] Search
+        }
+
         public enum GetClientsDetailsParams
         {
             [StringValue("clientid")] ClientID,
@@ -203,7 +211,9 @@ namespace WHMCS_API
         {
             [StringValue("ValidateLogin")] ValidateLogin,
             [StringValue("DomainWhois")] DomainWhois,
+            [StringValue("AcceptClient")] AcceptClient,
             [StringValue("AddClient")] AddClient,
+            [StringValue("GetClients")] GetClients,
             [StringValue("GetClientsDetails")] GetClientsDetails,
             [StringValue("GetOrders")] GetOrders,
             [StringValue("GetTransactions")] GetTransactions,

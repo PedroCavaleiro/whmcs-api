@@ -6,3 +6,9 @@
 /WHMCS API.nuspec
 /WHMCS_API.0.6.9.nupkg
 /WHMCS_API.0.6.10.nupkg
+
+*.cache
+
+obj/*
+.vs/*
+

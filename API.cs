@@ -83,6 +83,31 @@ namespace WHMCS_API
                 throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
 
         }
+
+        public GetClients.GetClients GetClients(int LimitStart = 0, int LimitNum = 25, string Sorting = "ASC", string Search = "")
+        {
+            if (!Sorting.Equals("ASC") && !Sorting.Equals("DESC"))
+                throw new Exception("Sorting parameter must be 'ASC' or 'DESC'");
+
+            NameValueCollection data = new NameValueCollection()
+            {
+                { "action", APIEnums.Actions.GetClients.ToString() },
+            };
+
+            data.Add(EnumUtil.GetString(APIEnums.GetClientsParams.LimitStart), LimitStart.ToString());
+            data.Add(EnumUtil.GetString(APIEnums.GetClientsParams.LimitNum), LimitNum.ToString());
+            data.Add(EnumUtil.GetString(APIEnums.GetClientsParams.Sorting), Sorting.ToString());
+
+            if (Search != "")
+                data.Add(EnumUtil.GetString(APIEnums.GetClientsParams.Search), Search.ToString());
+
+            string req = _call.MakeCall(data);
+            JObject result = JObject.Parse(req);
+            if (result["result"].ToString() == "success")
+                return JsonConvert.DeserializeObject<GetClients.GetClients>(req, settings);
+            else
+                throw new Exception("An API Error occurred", new Exception(result["message"].ToString()));
+        }
        
         public GetClientsDetails.GetClientsDetails GetClientsDetails(int ClientID = -1, string ClientEmail = "", bool Stats = false)
         {

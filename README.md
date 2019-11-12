@@ -19,7 +19,8 @@ Currently these functions are already implemented
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A3JFH2WA6U9YU)
 
 How to install<br />
-[NuGet](https://www.nuget.org/packages/WHMCS_API) Packet Manager Console on VisualStudio `Install-Package WHMCS_API`
+.NET Core Version [NuGet](https://www.nuget.org/packages/WHMCS_API/1.0.0) Packet Manager Console on VisualStudio `Install-Package WHMCS_API -Version 1.0.0`<br />
+.NET Framework Version [NuGet](https://www.nuget.org/packages/WHMCS_API/0.9.13) Packet Manager Console on VisualStudio `Install-Package WHMCS_API -Version 0.9.13`
 <br />or<br />
 <a href="https://github.com/hitmanpt/whmcs-api/releases">Releases</a> project page (need to also download Newtonsoft.Json if not already included on your project)
 

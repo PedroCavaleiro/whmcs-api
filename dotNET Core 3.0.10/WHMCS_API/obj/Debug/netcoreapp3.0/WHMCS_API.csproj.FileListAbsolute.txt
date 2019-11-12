@@ -1,0 +1,8 @@
+/Users/pedrocavaleiro/Repos/whmcs-api/dotNET Core 3.0.10/WHMCS_API/bin/Debug/netcoreapp3.0/WHMCS_API.deps.json
+/Users/pedrocavaleiro/Repos/whmcs-api/dotNET Core 3.0.10/WHMCS_API/bin/Debug/netcoreapp3.0/WHMCS_API.dll
+/Users/pedrocavaleiro/Repos/whmcs-api/dotNET Core 3.0.10/WHMCS_API/bin/Debug/netcoreapp3.0/WHMCS_API.pdb
+/Users/pedrocavaleiro/Repos/whmcs-api/dotNET Core 3.0.10/WHMCS_API/obj/Debug/netcoreapp3.0/WHMCS_API.csprojAssemblyReference.cache
+/Users/pedrocavaleiro/Repos/whmcs-api/dotNET Core 3.0.10/WHMCS_API/obj/Debug/netcoreapp3.0/WHMCS_API.AssemblyInfoInputs.cache
+/Users/pedrocavaleiro/Repos/whmcs-api/dotNET Core 3.0.10/WHMCS_API/obj/Debug/netcoreapp3.0/WHMCS_API.AssemblyInfo.cs
+/Users/pedrocavaleiro/Repos/whmcs-api/dotNET Core 3.0.10/WHMCS_API/obj/Debug/netcoreapp3.0/WHMCS_API.dll
+/Users/pedrocavaleiro/Repos/whmcs-api/dotNET Core 3.0.10/WHMCS_API/obj/Debug/netcoreapp3.0/WHMCS_API.pdb

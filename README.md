@@ -28,7 +28,7 @@ The following code demonstrates to to implement the GetClientDetails on an ASP.n
 More information on the project Wiki <a href="https://github.com/hitmanpt/whmcs-api/wiki/Getting-Started">Getting Started</a>
 
 ```
-using WHMCS-API;
+using WHMCS_API;
 namespace YOUR_APP
 {
     public class YOUR_CLASS
